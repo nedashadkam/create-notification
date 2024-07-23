@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <button id="btn">create notification</button>
+    <div id="container"></div>
+
+    <script>
+
+        window.onload = function () {
+
+            const btn = document.getElementById("btn");
+            const container = document.getElementById("container");
+            btn.addEventListener('click', function () {
+                createNotification();
+            })
+
+            function createNotification() {
+                const notif = document.createElement('div');
+                notif.classList.add('toast');
+                notif.innerText = 'notification';
+                container.appendChild(notif);
+                setTimeout(function () {
+                    notif.remove();
+                }, 5000)
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
